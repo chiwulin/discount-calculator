@@ -1,16 +1,47 @@
-# React + Vite
+# Discount Calculator PWA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful, user-friendly Discount Calculator designed to handle complex shopping scenarios. This Progressive Web App (PWA) allows users to easily calculate final prices with stacked discounts and multi-region tax support, specifically tailored for Canadian provinces.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Stacked Discounts**: Apply multiple discounts in sequence. Supports both percentage-based (e.g., 20% off) and fixed amount (e.g., $50 off) discounts.
+-   **Multi-Region Tax Support**: Built-in tax rates for all Canadian provinces and territories (GST, PST, HST).
+-   **Custom Tax Rates**: Flexible "Custom Region" option to manually input any tax rate for other locations.
+-   **Bilingual Interface**: Seamlessly switch between English and Traditional Chinese (繁體中文).
+-   **Progressive Web App (PWA)**: Installable on mobile and desktop devices for an app-like experience. Works offline.
+-   **Real-time Calculation**: See the breakdown of original price, total discount, pre-tax price, estimated tax, and final price instantly.
 
-## React Compiler
+## Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is built with modern web technologies for performance and developer experience:
 
-## Expanding the ESLint configuration
+-   **[React](https://react.dev/)**: For building a dynamic and responsive user interface.
+-   **[Vite](https://vitejs.dev/)**: Next-generation frontend tooling for fast development and building.
+-   **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapid UI development and styling.
+-   **[Lucide React](https://lucide.dev/)**: Beautiful, consistent icons.
+-   **[Vite PWA Plugin](https://vite-pwa-org.netlify.app/)**: For generating the Web App Manifest and Service Worker to enable PWA capabilities.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+To run this project locally:
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/chiwulin/discount-calculator.git
+    cd discount-calculator
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```

@@ -48,7 +48,7 @@ const Label = ({ className, children, htmlFor }) => (
 
 const Input = ({ className, ...props }) => (
   <input
-    className={`flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
+    className={`flex h-10 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-base ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
     {...props}
   />
 );
@@ -284,7 +284,7 @@ export default function DiscountCalculator() {
               <div className="p-2 bg-blue-100 text-blue-600 rounded-lg">
                 <Calculator className="w-6 h-6" />
               </div>
-              <div>
+              <div className="flex flex-col gap-2">
                 <CardTitle>{t.title}</CardTitle>
                 <CardDescription>{t.desc}</CardDescription>
               </div>
@@ -319,6 +319,7 @@ export default function DiscountCalculator() {
               <Input
                 id="price"
                 type="number"
+                inputMode="decimal"
                 value={originalPrice}
                 onChange={(e) => setOriginalPrice(e.target.value)}
                 placeholder={t.placeHolderPrice}
@@ -354,8 +355,8 @@ export default function DiscountCalculator() {
                       <button
                         onClick={() => updateDiscount(discount.id, 'type', 'percent')}
                         className={`relative inline-flex items-center rounded-l-md border px-3 py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-600 ${discount.type === 'percent'
-                            ? 'bg-blue-50 text-blue-600 border-blue-200 z-10'
-                            : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
+                          ? 'bg-blue-50 text-blue-600 border-blue-200 z-10'
+                          : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
                           }`}
                         title={t.percentTitle}
                       >
@@ -364,8 +365,8 @@ export default function DiscountCalculator() {
                       <button
                         onClick={() => updateDiscount(discount.id, 'type', 'amount')}
                         className={`relative -ml-px inline-flex items-center rounded-r-md border px-3 py-2 text-sm font-medium focus:z-10 focus:outline-none focus:ring-1 focus:ring-blue-600 ${discount.type === 'amount'
-                            ? 'bg-blue-50 text-blue-600 border-blue-200 z-10'
-                            : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
+                          ? 'bg-blue-50 text-blue-600 border-blue-200 z-10'
+                          : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'
                           }`}
                         title={t.amountTitle}
                       >
@@ -376,6 +377,7 @@ export default function DiscountCalculator() {
                     {/* 折扣數值輸入 */}
                     <Input
                       type="number"
+                      inputMode="decimal"
                       value={discount.value}
                       onChange={(e) => updateDiscount(discount.id, 'value', e.target.value)}
                       placeholder={discount.type === 'percent' ? t.percentPlaceholder : t.amountPlaceholder}
@@ -440,6 +442,7 @@ export default function DiscountCalculator() {
                   <Input
                     id="custom-tax"
                     type="number"
+                    inputMode="decimal"
                     value={customTaxRate}
                     onChange={(e) => setCustomTaxRate(e.target.value)}
                     className="flex-1"
