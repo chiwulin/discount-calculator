@@ -276,7 +276,7 @@ export default function DiscountCalculator() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10 px-4 flex justify-center items-start font-sans">
+    <div className="min-h-screen bg-slate-50 py-10 px-4 flex flex-col justify-center items-center font-sans">
       <Card className="w-full max-w-lg shadow-xl">
         <CardHeader className="bg-white border-b border-slate-100 pb-6">
           <div className="flex items-center justify-between">
@@ -491,6 +491,18 @@ export default function DiscountCalculator() {
           </div>
         </div>
       </Card>
+
+      <footer className="mt-8 text-center text-sm text-slate-500">
+        <p>Developed by Chiwu(Justin) Lin</p>
+        <a
+          href="https://chiwulin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          chiwulin.com
+        </a>
+      </footer>
     </div>
   );
 }
